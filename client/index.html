@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Recognition Debug</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #canvas {
+            border: 2px solid #000000;
+            background: white;
+        }
+        #debug-canvas {
+            border: 1px solid #red;
+            margin-top: 10px;
+        }
+        .button-group {
+            margin: 10px 0;
+        }
+        button {
+            margin: 0 5px;
+            padding: 8px 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Draw a Digit</h1>
+        <canvas id="canvas" width="280" height="280"></canvas>
+        <div class="button-group">
+            <button id="predict-btn">Predict</button>
+            <button id="clear-btn">Clear</button>
+        </div>
+        <div id="result"></div>
+        <!-- Debug preview -->
+        <h3>Debug Preview (28x28)</h3>
+        <canvas id="debug-canvas" width="28" height="28"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
