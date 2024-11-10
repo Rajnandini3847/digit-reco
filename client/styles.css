@@ -1,0 +1,177 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Container for all elements */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Header styling with search-box like input */
+header {
+    width: 100%;
+    margin-bottom: 40px; /* Increased margin for more space */
+}
+
+.header-text {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    border-radius: 25px;
+    padding: 10px 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.header-text input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #e0e0e0;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+}
+
+.header-text .icon {
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+/* Canvas container with side-by-side layout */
+.canvas-container {
+    display: flex;
+    gap: 30px; /* Added more space between canvas and debug */
+    align-items: center;
+}
+
+/* Debug preview styling */
+.debug-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: #262626;
+    border: 2px dashed #888;
+    border-radius: 10px;
+    padding: 15px;
+    width: 280px;
+    height: 280px;
+    animation: fadeInUp 1s ease;
+}
+
+.debug-preview h3 {
+    font-size: 16px;
+    color: #a0e0a0;
+    margin-bottom: 10px;
+}
+
+.loading-bars {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.bar {
+    width: 8px;
+    height: 40px;
+    background-color: #888;
+    border-radius: 4px;
+    animation: bounce 0.8s infinite ease-in-out;
+}
+
+/* Animation delays for loading bars */
+.bar:nth-child(1) { animation-delay: 0s; }
+.bar:nth-child(2) { animation-delay: 0.2s; }
+.bar:nth-child(3) { animation-delay: 0.4s; }
+
+/* Animation for loading bars */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Main Canvas Styling */
+#canvas {
+    border: 2px dashed #888;
+    border-radius: 10px;
+    background: #262626;
+    animation: fadeInUp 1s ease;
+}
+
+/* Button group styling with larger buttons */
+.button-group {
+    display: flex;
+    gap: 20px; /* Added space between buttons */
+    margin: 25px 0; /* Increased margin */
+}
+
+button {
+    background-color: #444;
+    color: #e0e0e0;
+    border: none;
+    padding: 12px 25px; /* Increased padding */
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px; /* Increased font size */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #666;
+    transform: translateY(-3px); /* Button hover effect */
+}
+
+button .button-icon {
+    font-size: 18px;
+}
+
+.result-box {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #a0e0a0;
+}
+
+.pulse-animation {
+    animation: pulse 1s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

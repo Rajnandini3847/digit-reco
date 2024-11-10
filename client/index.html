@@ -3,42 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digit Recognition Debug</title>
-    <style>
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        #canvas {
-            border: 2px solid #000000;
-            background: white;
-        }
-        #debug-canvas {
-            border: 1px solid #red;
-            margin-top: 10px;
-        }
-        .button-group {
-            margin: 10px 0;
-        }
-        button {
-            margin: 0 5px;
-            padding: 8px 16px;
-        }
-    </style>
+    <title>Digit Recognition</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Draw a Digit</h1>
-        <canvas id="canvas" width="280" height="280"></canvas>
-        <div class="button-group">
-            <button id="predict-btn">Predict</button>
-            <button id="clear-btn">Clear</button>
+        <header>
+            <div class="header-text">
+                <span class="icon">✍️</span>
+                <input type="text" placeholder="Draw a digit, I'll tell u what it is, hahahahaa!" readonly>
+                <span class="icon">✨</span>
+            </div>
+        </header>
+
+        <!-- Adding more margin here for space -->
+        <div class="canvas-container">
+            <div class="debug-preview">
+                <h3>Debugging Preview</h3>
+                <canvas id="debug-canvas" width="100" height="100"></canvas>
+                <div class="loading-bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <canvas id="canvas" width="280" height="280"></canvas>
         </div>
-        <div id="result"></div>
-        <!-- Debug preview -->
-        <h3>Debug Preview (28x28)</h3>
-        <canvas id="debug-canvas" width="28" height="28"></canvas>
+
+        <!-- Button group with increased size -->
+        <div class="button-group">
+            <button id="predict-btn">
+                <span class="button-icon">🔮</span> Predict
+            </button>
+            <button id="clear-btn">
+                <span class="button-icon">🧹</span> Clear
+            </button>
+        </div>
+        
+        <div id="result" class="result-box"></div>
     </div>
 
     <script src="script.js"></script>
