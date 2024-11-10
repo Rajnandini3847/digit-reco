@@ -1,20 +1,22 @@
-# Ignore the virtual environment folder
-venv/
-.venv/
-
-# Ignore Python cache files
+# Ignore Python bytecode
 __pycache__/
 *.pyc
+*.pyo
 
-# Ignore environment files (if you have any)
-.env
+# Ignore virtual environment
+venv/
+.env/
+.venv/
 
-# Ignore Jupyter Notebook checkpoints (if you use Jupyter Notebooks)
-.ipynb_checkpoints/
+# Ignore jupyter notebook checkpoints
+.ipynb_checkpoints
 
-# Ignore log files
-*.log
+# Ignore environment-specific files
+.DS_Store
+Thumbs.db
 
-# Ignore OS-specific files
-.DS_Store  # macOS
-Thumbs.db  # Windows
+# Ignore Flask instance folders (if any)
+instance/
+
+# Ignore Python distribution packages
+*.egg-info/
